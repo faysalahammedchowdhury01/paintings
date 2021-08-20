@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwindcss and Fonts -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styling -->
+    <style>
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .selected {
+        border: 1px solid purple;
+      }
+    </style>
+    <title>Canva</title>
+  </head>
+  <body>
+    <main>
+      <div class="container mx-auto px-4 md:px-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- Tab Content -->
+          <div class="p-5 border rounded border-gray-200 m-5">
+            <div class="h-96 w-full">
+              <img
+                src="images/1.jpg"
+                id="art"
+                class="w-full rounded h-full object-cover"
+                alt=""
+              />
+            </div>
+            <p id="desc" class="text-lg text-gray-700 mt-5">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+              beatae laboriosam, commodi quis tempore necessitatibus.
+              Voluptatibus minima aut non doloremque?
+            </p>
+            <h3 class="text-2xl font-medium pb-2 mt-3">
+              $<span id="price">750</span>
+            </h3>
+          </div>
+          <!-- Options -->
+          <div class="mt-10 max-w-lg mx-auto">
+            <div>
+              <button
+                class="
+                  p-5
+                  border border-gray-200
+                  shadow
+                  hover:shadow-lg
+                  rounded
+                "
+                id="free-shipping-btn"
+              >
+                Free Shipping - $<span id="free-shipping-charge">0</span>
+              </button>
+              <button
+                class="
+                  p-5
+                  border border-gray-200
+                  shadow
+                  hover:shadow-lg
+                  rounded
+                "
+                id="express-shipping-btn"
+              >
+                Express Shipping - $<span id="express-shipping-charge">30</span>
+              </button>
+            </div>
+            <div class="text-2xl py-2 mt-10">
+              Shipping Charge: $<span id="shipping-charge">0</span>
+            </div>
+            <div class="text-2xl py-2">Total: $<span id="total">750</span></div>
+            <button
+              class="
+                px-4
+                py-2
+                text-xl
+                border border-purple-200
+                mt-6
+                shadow
+                rounded
+                hover:shadow-xl
+              "
+            >
+              Buy Now
+            </button>
+            <div class="flex justify-between items-center mt-20">
+              <div
+                class="
+                  p-5
+                  my-2
+                  border
+                  cursor-pointer
+                  hover:border-purple-600 hover:shadow-lg
+                  rounded
+                "
+                id="first"
+              >
+                <img src="images/1.jpg" class="w-20 h-20" alt="" />
+              </div>
+              <div
+                class="
+                  p-5
+                  my-2
+                  border
+                  cursor-pointer
+                  hover:border-purple-600
+                  rounded
+                "
+                id="second"
+              >
+                <img src="images/2.jpg" class="w-20 h-20" alt="" />
+              </div>
+              <div
+                class="
+                  p-5
+                  my-2
+                  border
+                  cursor-pointer
+                  hover:border-purple-600
+                  rounded
+                "
+                id="third"
+              >
+                <img src="images/3.jpg" class="w-20 h-20" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Custom js -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
