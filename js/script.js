@@ -4,9 +4,9 @@ const descField = document.getElementById('desc');
 const priceField = document.getElementById('price');
 const freeShippingBtn = document.getElementById('free-shipping-btn');
 const expressShippingBtn = document.getElementById('express-shipping-btn');
-const freeShippingPriceField = document.getElementById('free-shipping-price');
-const expressShippingPriceField = document.getElementById(
-  'express-shipping-price'
+const freeShippingChargeField = document.getElementById('free-shipping-charge');
+const expressShippingChargeField = document.getElementById(
+  'express-shipping-charge'
 );
 const shippingChargeField = document.getElementById('shipping-charge');
 const totalField = document.getElementById('total');
@@ -42,6 +42,8 @@ function changeTabs(tab) {
   art.src = tab.imageUrl;
   descField.innerText = tab.desc;
   priceField.innerText = tab.price;
+  updateBalance(tab.price, shippingCost);
+  selectedTabs = tab;
 }
 
 function selected(item) {
@@ -55,28 +57,22 @@ function selected(item) {
 
 function updateBalance(price, shippingCost) {
   const total = price + shippingCost;
-  shippingChargeField.innerText = shippingCost;
   totalField.innerText = total;
+  shippingChargeField.innerText = shippingCost;
 }
 
 // event listeners
 tab1Btn.addEventListener('click', function () {
   changeTabs(tab1Contents);
   selected(tab1Btn);
-  selectedTabs = tab1Contents;
-  updateBalance(selectedTabs.price, shippingCost);
 });
 tab2Btn.addEventListener('click', function () {
   changeTabs(tab2Contents);
   selected(tab2Btn);
-  selectedTabs = tab2Contents;
-  updateBalance(selectedTabs.price, shippingCost);
 });
 tab3Btn.addEventListener('click', function () {
   changeTabs(tab3Contents);
   selected(tab3Btn);
-  selectedTabs = tab3Contents;
-  updateBalance(selectedTabs.price, shippingCost);
 });
 
 freeShippingBtn.addEventListener('click', function () {
@@ -96,3 +92,5 @@ selectedTabs = tab1Contents;
 selected(tab1Btn);
 selected(freeShippingBtn);
 updateBalance(selectedTabs.price, shippingCost);
+freeShippingChargeField.innerText = freeShippingCharge;
+expressShippingChargeField.innerText = expressShippingCharge;
